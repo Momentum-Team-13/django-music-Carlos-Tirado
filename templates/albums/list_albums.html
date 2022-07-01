@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Music App</h1>
+
+<p><a href="{% url 'new_album' %}">Add new album</a></p>
+
+
+
+{% for album in albums %}
+<a href="{% url 'view_album' pk=album.pk %}">{{ album.artist }}</a><br>
+<!-- <a href="{% url 'view_album' pk=album.pk %}">{{ album.title }}</a> -->
+<a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>
+<a href="{% url 'delete_album' pk=album.pk %}">Delete Album</a><br>
+
+
+{% endfor %}
+
+
+{% endblock %}
