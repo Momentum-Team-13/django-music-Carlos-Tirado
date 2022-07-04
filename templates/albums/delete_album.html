@@ -8,9 +8,10 @@
     {% csrf_token %}
     <p>Are you sure you want to delete {{ album.name }}?</p>
     <div>
-      <button type="submit">Delete Album</button><br />
+      <button class='btn-warning' type="submit">I am sure</button><br />
       <a href="{% url 'list_albums' %}">Cancel</a>
     </div>
   </form>
 </div>
 {% endblock %}
+
