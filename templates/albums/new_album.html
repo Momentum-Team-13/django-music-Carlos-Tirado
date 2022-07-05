@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- <h1>New Album</h1> -->
+
+    <a
+      class="mb-5"
+      href="{% url 'list_albums' %}"
+      class="d-flex justify-content"
+      > <-- Home page</a>
+  <div
+    class="d-flex flex-column align-items-center justify-content-content mb-5"
+  >
+    <div class="mb-5">
+      <h1>Add Album</h1>
+
+<div>
+    <form action="{% url 'new_album' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <button class='btn-primary' type="submit">Add Album</button>
+    </div>
+    </form>
+</div>
+{% endblock %}
