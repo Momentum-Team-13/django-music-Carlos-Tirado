@@ -2,11 +2,17 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AlbumForm
 from .models import Album
 
+
+
+
 # Create your views here.
 def list_albums(request):
     albums = Album.objects.all()
     return render(request, 'albums/list_albums.html',
             {'albums': albums })
+    
+   
+
 
 def new_album(request):
     if request.method == 'GET':
@@ -18,6 +24,10 @@ def new_album(request):
             return redirect(to='list_albums')
 
     return render(request, "albums/new_album.html", {"form": form})
+
+
+
+
 
 
 def view_album(request, pk):
@@ -41,6 +51,7 @@ def edit_album(request, pk):
         "form": form,
         "album": album
     })
+
 
 def delete_album(request, pk):
     album = get_object_or_404(Album, pk=pk)

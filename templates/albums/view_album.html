@@ -1,15 +1,36 @@
 {% extends "base.html" %}
 
+
+
 {% block content %}
 
 
 
 
 
+<!-- 
 <p>{{ album.artist }}</p>
 
-<p>{{ album.title }}</p>
+<p>{{ album.title }}</p> -->
 
+
+
+
+
+<div class="container">
+
+    
+
+    
+
+    <a>{{ album.artist }}</a><br>
+    <a>{{ album.title }}</a><br>
+    
+    <a class="button2" href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>
+    <a class="button3" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a><br>
+</div>
+
+    
 
 
 

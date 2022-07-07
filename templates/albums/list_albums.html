@@ -3,18 +3,22 @@
 {% block content %}
 <h1>Music App</h1>
 
-<p><a class="btn-default" href="{% url 'new_album' %}">Add new album</a></p>
+<p><a class="button1" href="{% url 'new_album' %}">Add new album</a></p>
 
 
 
-{% for album in albums %}
-<a href="{% url 'view_album' pk=album.pk %}"><strong>{{ album.artist }}</strong></a><br>
-<!-- <a href="{% url 'view_album' pk=album.pk %}">{{ album.title }}</a> -->
-<a class="btn-default" href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>
-<a class="btn-default" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a><br>
 
 
-{% endfor %}
+    {% for album in albums %}
+    <a href="{% url 'view_album' pk=album.pk %}"><strong>{{ album.artist }}</strong></a><br>
+
+    <a><time class="date">added on {{ album.created_at}}</time></a><br>
+    <!-- <a href="{% url 'view_album' pk=album.pk %}">{{ album.title }}</a> -->
+    <a class="button2" href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>
+    <a class="button3" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a><br>
+
+
+    {% endfor %}
 
 
 {% endblock %}
