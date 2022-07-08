@@ -21,7 +21,7 @@
 
     
 
-    
+   
 
     <a>{{ album.artist }}</a><br>
     <a>{{ album.title }}</a><br>
@@ -35,3 +35,5 @@
 
 
 {% endblock %}
+
+path('albums/<int:pk>/', albums_views.cover_album, name='cover_album'),

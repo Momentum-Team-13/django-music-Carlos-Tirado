@@ -7,9 +7,10 @@
 <div>
     <form action="{% url 'delete_album' pk=album.pk %}" method="POST">
     {% csrf_token %}
-    <p>Are you sure you want to delete {{ album.name }}?</p>
+    <p>Are you sure you want to delete it {{ album.name }}?</p>
     <div>
-        <button class='btn-warning' type="submit">I am sure</button><br />
+        <button class='btn-warning' type="submit">I am sure</button><br/>
+        <br>
         <a href="{% url 'list_albums' %}">Cancel</a>
     </div>
     </form>
